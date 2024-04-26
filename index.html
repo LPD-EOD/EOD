@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Homepage</title>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            height: 60px;
+            width: 100px;
+            margin: auto;
+        }
+
+        main {
+            margin: 40px;
+        }
+
+        .user-actions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        body {
+            background-image: url('home.jpg');
+            background-size: 1250px 550px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center; /* Adjust as needed */
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            background-color: dodgerblue;
+            border: 2px solid #333;
+        }
+
+        .header-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .stretch-text {
+            color: #B8AF65;
+            background-color: #D9D9D9;
+            text-align: center;
+            font-size: 55px;
+            display: block;
+            margin-left: 65px;
+            width: 85%;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .highlighted {
+            background-color: #0056b3;
+        }
+
+        /* Sidebar Styles */
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
+            color: go;
+            display: block;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .sidebar a:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #fff;
+            display: none;
+        }
+
+        .sidebar a:hover {
+            color: #333;
+        }
+
+        .sidebar a:hover:before {
+            display: block;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: dodgerblue;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidebar a:hover {
+            background-color: transparent;
+            color: #333;
+        }
+
+        .sidebar .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 30px;
+        }
+
+        .sep {
+            height: 1px;
+            width: 200px;
+            background-color: black;
+            margin-left: 10px;
+        }
+
+        .close-btn:hover {
+            background-color: transparent;
+        }
+
+        .first-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: solid 5px white;
+        }
+
+        .introduction-text {
+            width: 50%;
+            border-right: 5px solid white;
+            padding-left: 20px;
+        }
+
+        .professional-login {
+            width: 50%;
+            padding-left: 20px;
+            text-align: center;
+            margin-top: 200px; 
+        }
+
+        .prof {
+            background-color: yellow;
+            padding: 50px;
+            border-radius: 10%;
+        }
+
+        .prof:hover {
+            background-color: #333; /* Hovered button background color */
+            color: yellow; /* Text color on hover */
+        }
+
+        /* Increase text size for p tags */
+        .introduction-text p {
+            font-size: 20px;
+        }
+
+        /* Change the color of professional login text to black */
+        .professional-login a {
+            color: #000;
+            font-size: 24px;
+        }
+
+        .last-section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 5px solid white;
+            border-top: none;
+            gap: 10px;
+        }
+
+        .color2 {
+            width: 33%;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .color1_1 {
+            background-color: green;
+            padding: 20px;
+            border-radius: 15%;
+        }
+
+        .color1_1:hover {
+            background-color: #333;
+            color: green;
+        }
+
+        .color1_2 {
+            background-color: goldenrod;
+            padding: 20px;
+            border-radius: 15%;
+        }
+
+        .color1_2:hover {
+            background-color: #333;
+            color: goldenrod;
+        }
+
+        .color1_3 {
+            background-color: palevioletred;
+            padding: 20px;
+            border-radius: 15%;
+        }
+
+        .color1_3:hover {
+            background-color: #333;
+            color: palevioletred;
+        }
+
+        .header-item a i {
+            font-size: 50px;
+            line-height: 50px;
+            color: white;
+            margin-right: 10px;
+            transition: color 0.3s;
+        }
+
+        .header-item a i:hover {
+            color: #333;
+        }
+
+        .main_body {
+            border: 5px solid white;
+            border-top: none;
+            text-align: center;
+        }
+
+        .login {
+            display: inline-block;
+            font-size: 24px;
+            background-color: goldenrod;
+            border-radius: 15%;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .signup {
+            display: inline-block;
+            font-size: 24px;
+            background-color: goldenrod;
+            border-radius: 15%;
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-left: 173px;
+        }
+
+        .login:hover, .signup:hover {
+            background-color: #333;
+            color: goldenrod;
+        }
+
+        .register-text {
+            margin-top: 10px;
+            font-size: 16px;
+            color: white;
+            margin-left: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .double-arrow {
+            position: relative;
+            display: inline-block;
+            font-size: 50px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                top: -30px;
+            }
+            to {
+                top: 10px;
+            }
+        }
+
+        .butt a {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 18px;
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s;
+            animation: sideToSide 1.5s infinite alternate, multicolor 5s infinite;
+        }
+
+        .butt_container {
+            display: inline-block;
+            padding: 3px 3px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+
+        @keyframes sideToSide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(10px);
+            }
+        }
+
+        @keyframes multicolor {
+            0% {
+                background-color: #ff4d4d;
+            }
+            25% {
+                background-color: #ffb366;
+            }
+            50% {
+                background-color: #4d94ff;
+            }
+            75% {
+                background-color: #66ff66;
+            }
+            100% {
+                background-color: #ff4d4d;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="first-section">
+            <div class="header-item center">
+                <img src="Logo_final.png" alt="Logo">
+            </div>
+        </div>
+        <div class="header-item">
+            <div class="butt_container">
+                <div class="butt"><a href="guide.php" style="cursor:pointer; color:yellow;">Step-by-step Guide</a></div>
+            </div>
+            <a class="color" href="#" onclick="openSidebar()">
+                <i class="fas fa-bars"></i>
+            </a>
+        </div>
+    </header>         
+    <div class="sidebar" id="mySidebar">
+        <a href="javascript:void(0)" class="close-btn color" onclick="closeSidebar()">&times;</a>
+        <div class="sep"></div>
+        <a class="color" href="#">Documentation</a>
+        <div class="sep"></div>
+        <a class="color" href="LPD_Scheme_Guidelines.pdf">Lean Premise Design Guidelines</a>
+        <div class="sep"></div>
+        <a class="color" href="contact.php">Contact</a>
+        <div class="sep"></div>
+    </div>
+    <main>
+        <div class="first-section" style="background-color: #98b3c640;">
+            <div class="introduction-text">
+                <h1 style="text-decoration: underline; color: #333; font-size: 60px;  font-family: 'Arial', sans-serif; ">Introduction:</h1>
+                <p style="color: black; font-family: 'sans-serif', sans-serif; font-weight: 800;"><span style="color: black; font-weight: 800; color: red;">The EOD platform</span> aims to facilitate related sustainable design networking and engagements of various stakeholders - end-users, developers, building designers, local authorities, and building managers - from the building design stage to the building occupancy stage.<br><br>
+                <span style="color: black; font-weight: 800; color: green;">Building end-users</span> can provide <span style="color: green;">general feedback</span> on their needs to the building's designers.<br><br>
+                <span style="color: black; font-weight: 800; color: goldenrod;">End-users</span> must be occupants of buildings registered by a developer on the EOD platform in order to provide <span style="color: goldenrod;">specific feedback</span>.<br><br>
+                <span style="color: black; font-weight: 800; color: palevioletred;">Potential buyers</span> can click on the <span style="color: palevioletred; font-size: 18px;">'Browse New Developments'</span> button to peruse apartment adverts by developers and provide feedback.
+                </p>
+            </div>
+            <div class="professional-login">
+                <a class="color prof" href="admin_login.php">Professional Login</a>
+            </div>
+        </div>
+        <div class="main_body">
+            <a class="login" href="user_login.php">End-user Login</a>
+            <a class="signup" href="user_signup.php">Register</a>
+            <div class="register-text">
+                <i class="double-arrow fas fa-arrow-up"></i>
+                <span style="background-color: black;">First-time End-users should click the <span style="color: goldenrod;">REGISTER</span> button</span>
+            </div>
+        </div>
+        <section class="last-section">
+            <div class="color2" style="border-right: 5px solid white;">
+                <a class="color1_1" href="evaluation_question.php">
+                    <span>General Feedback</span>
+                </a>
+            </div>
+            <div class="color2" style="border-right: 5px solid white;">
+                <a class="color1_2" href="specific_feedback.php">
+                    <span>Specific Feedback</span>
+                </a>
+            </div>
+            <div class="color2">
+                <a class="color1_3" href="browse_new_development.php">
+                    <span>Browse New Developments</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <script>
+        function openSidebar() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeSidebar() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
+</body>
+</html>
